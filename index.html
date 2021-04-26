@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Radio Button Dot-Slider (Pure CSS)</title>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Nunito:400,600,800'>
+  <link rel='stylesheet' href='https://pro.fontawesome.com/releases/v5.4.1/css/all.css'>
+  <link rel="stylesheet" href="./style.css">
+
+  <meta name="viewport" content="width=device-width, initialscale=1.0">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fontawesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    #buttons {
+      width: 80%;
+      border: 5px;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 100px;
+    }
+
+    #buttons input {
+      font-size: 24px;
+    }
+
+    #buttons button {
+      font-size: 48px;
+      background: #4caf50;
+      color: #fff;
+      width: 25%;
+      margin: 10px;
+      border-radius: 5px;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  </style>
+
+</head>
+<body>
+
+
+<h1>Select Amount</h1>
+<div id="buttons">
+  <button onclick="decrement()">-</button>
+  <input id=demoInput type=number min=0 max=5>
+  <button onclick="increment()">+</button>
+  <script>
+     function increment() {
+        document.getElementById('demoInput').stepUp();
+     }
+     function decrement() {
+        document.getElementById('demoInput').stepDown();
+     }
+  </script>
+
+</div>
+
+<!--can you change alignment of input type number--->
+
+<!-- partial:index.partial.html -->
+<div id="form-wrapper">
+	<form action="/p/quote.php" method="GET">
+		<h1 id="form-title">Select Amount</h1>
+		<div id="debt-amount-slider">
+			<input type="radio" name="debt-amount" id="1" value="1" required>
+			<label for="1" data-debt-amount="1"></label>
+			<input type="radio" name="debt-amount" id="2" value="2" required>
+			<label for="2" data-debt-amount="2"></label>
+			<input type="radio" name="debt-amount" id="3" value="3" required>
+			<label for="3" data-debt-amount="3"></label>
+			<input type="radio" name="debt-amount" id="4" value="4" required>
+			<label for="4" data-debt-amount="4"></label>
+			<input type="radio" name="debt-amount" id="5" value="5" required>
+			<label for="5" data-debt-amount="5"></label>
+			<div id="debt-amount-pos"></div>
+		</div>
+	</form>
+	<button type="submit">Submit</button>
+</div>
+<!-- partial -->
+
+  
+</body>
+</html>
